@@ -4,7 +4,7 @@ import { Card, CardGroup } from "react-bootstrap";
 const Food = (props) => {
   const { strMeal, strInstructions, strMealThumb } = props.meal;
   return (
-    <div className="w-25 mb-5">
+    <div className="w-50 mb-5">
       <CardGroup>
         <Card>
           <Card.Img className="w-100" variant="top" src={strMealThumb} />
@@ -17,7 +17,9 @@ const Food = (props) => {
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <button>Add to Cart</button>
+            <button onClick={() => props.handleAddToCart(props.meal)}>
+              Add to Cart
+            </button>
           </Card.Footer>
         </Card>
       </CardGroup>
